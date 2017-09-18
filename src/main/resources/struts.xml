@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+
+    <package name="myPackage" extends="struts-default">
+
+
+        <action name="select" class="com.iqmsoft.struts.controller.Select">
+            <result>/WEB-INF/jsp/update.jsp</result>
+        </action>
+
+        <action name="index" method="click" class="com.iqmsoft.struts.controller.Select">
+            <result>/WEB-INF/jsp/nodecorate/table.jsp</result>
+        </action>
+
+        <action name="update" method="save" class="com.iqmsoft.struts.controller.Select">
+            <result name="success" type="redirect">
+                <param name="location">/index.jsp</param>
+            </result>
+        </action>
+
+    </package>
+
+</struts>
